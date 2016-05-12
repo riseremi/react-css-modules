@@ -3,6 +3,9 @@ import CSSModules from 'react-css-modules';
 
 import styles from './Button.styl';
 
+/**
+* Simple brand button.
+*/
 const Button = (props) => <button styleName="button">{props.text}</button>;
 
 Button.propTypes = {

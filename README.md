@@ -5,6 +5,11 @@ Install deps and run dev server at http://localhost:8080
 npm i && npm start
 ```
 
+Run styleguidist server at http://localhost:3000
+```javascript
+npm run styleguide-server
+```
+
 # Where Am I
 
 This is a demo project to help myself figure out what CSS Modules is.
@@ -15,6 +20,7 @@ Technology stack:
 2. react-hot-loader + babel + react-css-modules
 3. stylus + stylint
 4. react + react-router + eslint
+5. react-styleguidist
 
 ESLint config extends [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) without any modifications.
 
