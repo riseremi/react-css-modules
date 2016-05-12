@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --profile --colors --hot"
+    "start": "webpack-dev-server --progress --profile --colors --hot",
+    "styleguide-server": "styleguidist server",
+    "styleguide-build": "styleguidist build"
   },
   "author": "riseremi",
   "license": "ISC",
@@ -26,6 +28,7 @@
     "path": "^0.12.7",
     "react-css-modules": "^3.7.6",
     "react-hot-loader": "^1.3.0",
+    "react-styleguidist": "^2.2.2",
     "style-loader": "^0.13.1",
     "stylint": "^1.3.10",
     "stylus": "^0.54.5",
