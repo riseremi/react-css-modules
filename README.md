@@ -5,6 +5,11 @@ Install deps and run dev server at http://localhost:8080
 npm i && npm start
 ```
 
+Run styleguidist server at http://localhost:3000
+```javascript
+npm run styleguide-server
+```
+
 # Where Am I
 
 This is a demo project to help myself figure out what CSS Modules is.
