@@ -1,13 +1,15 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const PROD = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
     './app/Application.jsx',
   ],
-  devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
+  devtool: PROD ? null : 'source-map',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
