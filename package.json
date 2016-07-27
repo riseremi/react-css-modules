@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --profile --colors --hot",
     "styleguide-server": "styleguidist server",
-    "styleguide-build": "styleguidist build"
+    "styleguide-build": "styleguidist build",
+    "production": "NODE_ENV='production' webpack --progress --profile --colors"
   },
   "author": "riseremi",
   "license": "ISC",

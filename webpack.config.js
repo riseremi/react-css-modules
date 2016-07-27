@@ -5,8 +5,6 @@ const PROD = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:8080',
-    'webpack/hot/only-dev-server',
     './app/Application.jsx',
   ],
   devtool: PROD ? null : 'source-map',
@@ -43,5 +41,35 @@ module.exports = {
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      __DEV__: !PROD,
+      'process.env': {
+        NODE_ENV: JSON.stringify(PROD ? 'production' : 'development'),
+      },
+    }),
   ],
 };
+
+if (!PROD) {
+  module.exports.entry.push(
+    'webpack-dev-server/client?http://0.0.0.0:8080',
+    'webpack/hot/only-dev-server'
+  );
+}
+
+if (PROD) {
+  module.exports.plugins.push(
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        unused: true,
+        dead_code: true,
+        screw_ie8: true,
+        unsafe: true,
+        warnings: false,
+      },
+    })
+  );
+}
