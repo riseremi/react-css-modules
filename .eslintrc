@@ -1,5 +1,8 @@
 {
-  "extends": "airbnb",
+  extends: "airbnb",
+  globals: {
+    "document": true
+  },
   rules: {
     "new-cap": 0
   }
